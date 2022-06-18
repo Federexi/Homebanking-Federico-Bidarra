@@ -34,9 +34,31 @@ nav ul li a{
     color: #FFFFFF;
     font-family: 'lato';
     font-weight: 600;
+    transition: 0s color;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: 
+  #3c5599;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 nav ul li a:hover {
+    transition-delay: 0.1s;
     color: #3c5599;
     border-radius: 20px;
 }
@@ -69,10 +91,13 @@ footer {
     padding-top: 5px;
 }
 
+
 footer a img {
     filter: brightness(1) invert(100%);
+    transition: 0s filter;
 }
 
 footer a img:hover {
     filter: brightness(1) invert(30%);
+    transition-delay: 0.1s;
 }
